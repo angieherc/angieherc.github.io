@@ -150,15 +150,18 @@
 			if (st < 150) {
 				if ( navbar.hasClass('scrolled') ) {
 					navbar.removeClass('scrolled sleep');
+                    $(".clip-circle-logo").show();
 				}
 			} 
 			if ( st > 350 ) {
 				if ( !navbar.hasClass('awake') ) {
-					navbar.addClass('awake');	
+					navbar.addClass('awake');
+                    $(".clip-circle-logo").hide();
 				}
 				
 				if(sd.length > 0) {
 					sd.addClass('sleep');
+                    $(".clip-circle-logo").show();
 				}
 			}
 			if ( st < 350 ) {
@@ -361,3 +364,32 @@ window.addEventListener("load", function(){
             "href": "https://cookieconsent.insites.com"
           }
         })});
+
+
+var $toTop = $('div.a123');
+$(window).scroll(function() {
+
+    clearTimeout($.data(this, 'waitASecond'));
+    $toTop.stop();
+
+    $.data(this, 'waitASecond', setTimeout(function() {
+
+     
+        if ($(window).scrollTop() > 100) {
+          $toTop.fadeIn();
+        } else if ($toTop.is(':visible')) {
+          $toTop.fadeOut();
+        }
+
+    }, 1000));
+
+});
+
+$("#inpt_search").on('focus', function () {
+    $(this).parent('label').addClass('active');
+});
+
+$("#inpt_search").on('blur', function () {
+    if($(this).val().length == 0)
+        $(this).parent('label').removeClass('active');
+});
