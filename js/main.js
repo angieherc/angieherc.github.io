@@ -151,17 +151,21 @@
 				if ( navbar.hasClass('scrolled') ) {
 					navbar.removeClass('scrolled sleep');
                     $(".clip-circle-logo").show();
+                     $(".navbar-nav-search").show();
+                    
 				}
 			} 
 			if ( st > 350 ) {
 				if ( !navbar.hasClass('awake') ) {
 					navbar.addClass('awake');
                     $(".clip-circle-logo").hide();
+                    $(".navbar-nav-search").hide();
 				}
 				
 				if(sd.length > 0) {
 					sd.addClass('sleep');
                     $(".clip-circle-logo").show();
+                    $(".navbar-nav-search").show();
 				}
 			}
 			if ( st < 350 ) {
@@ -406,3 +410,22 @@ function searchToggle(obj, evt){
             container.find('.search-input').val('');
         }
 }
+
+document.getElementById('link').onclick = function()
+{
+    location.href = document.getElementById('link_id').value;
+};
+
+$(".email-signup").hide();
+$("#signup-box-link").click(function(){
+  $(".email-login").fadeOut(100);
+  $(".email-signup").delay(100).fadeIn(100);
+  $("#login-box-link").removeClass("active");
+  $("#signup-box-link").addClass("active");
+});
+$("#login-box-link").click(function(){
+  $(".email-login").delay(100).fadeIn(100);;
+  $(".email-signup").fadeOut(100);
+  $("#login-box-link").addClass("active");
+  $("#signup-box-link").removeClass("active");
+});

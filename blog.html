@@ -22,49 +22,124 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-   <body class="goto-here">
-		<div class="py-1 bg-black">
+     <body class="goto-here">
+    <div class="py-2 bg-gray">
     	<div class="container">
-    		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
 		    		<div class="row d-flex">
-					    <div class="col-md pr-4 d-flex topper align-items-center">
+		    			<div class="col-md-9 d-flex align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-envelope"></span></div>
-						    <span class="text" ><a href="mailto:info@carbotec24.com" style="color: white">E-MAIL</a></span>
+						    <span class="text"><a href="mailto:info@carbotec24.com" style="color: black">Hochwertige Mikrofasertücher</a></span>
 					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center text-lg-right">
-						    <span class="text">Du erhältst kostenfreien Versand auf alle Artikel!</span>
+					    <div class="col-md d-flex align-items-end text-left">
+    							<a class="cd-signin pr-4" href="" target="_blank" class="" data-toggle="modal" data-target="#myModal7" class=" d-block"><span><i class="fa fa-user"></i></span> Mein Konto </a> 
+    							<a href="shop.html" class="pl-3"> <span><i  class="ion-ios-cart"></i></span> Warenkorb</a>
 					    </div>
 				    </div>
 			    </div>
 		    </div>
 		  </div>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" >
-	    <div class="container" >
-            <a class="navbar-brand" href="index.html"> <img src="images/logo-small.png" style="width: 23%"></a>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" >
+	    <div class="container">
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">HOME</a></li>
-	         <li class="nav-item"><a href="shop.html" class="nav-link">SHOP</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">B2B</a></li>
-              <li class="nav-item active"><a href="blog.html" class="nav-link">BlOG</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">KONTAKT</a></li>
-
+	        <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link underline-on-hover"><strong>HOME</strong></a></li>
+                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a href="shop.html" class="nav-link underline-on-hover"><strong>SHOP</strong></a></li>
+                <li class="nav-item"><a class="nav-link">|</a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link underline-on-hover"><strong>B2B</strong></a></li>
+                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link underline-on-hover"><strong>KONTAKT</strong></a></li>
 	        </ul>
 	      </div>
-	    </div>
+	        <ul class="navbar-nav ml-auto">
+               <li class="nav-item"><a href="blog.html" class="nav-link underline-on-hover"><strong>BLOG</strong></a></li>
+                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a href="" class="nav-link underline-on-hover"><strong>GESCHENKE</strong></a></li>
+                <li class="nav-item"><a class="nav-link">|</a></li>
+	          <li class="nav-item active"><a href="" class="nav-link underline-on-hover"><strong>SALE%</strong></a></li>
+	        </ul> 
+	      </div>
 	  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" >    
+       <div class="container">
+               <div class="brand">
+                 <div class="navbar-nav-search">
+                 <form class="active-pink-2">
+                     <input type='text' class="ssinput" id='link_id'placeholder="Suchen..." style="font-size: 12px;">
+  <i class="fa fa-search" id='link' value='Search' onClick='javascript:goTo()'></i>
+</form></div>
+        
+                <div class="navbar-brand description"><a href="index.html"><img class="namebrand" src="images/logo-name.png" > </a></div>
+                 <div class="description text-center d-flex align-self-stretch ftco-animate">
+            <img src="images/hex-logo.png" class="clip-circle-logo" ></div>
+                
+            </div> </div>
+       </nav>
     <!-- END nav -->
+      
+<!----------------------------------------------->
+ <div class="modal fade" id="myModal7" role="dialog">
+	<div class="modal-dialog" style="max-width: 550px;">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			
+			<div class="modal-body">
+  <div class="login-box">
+    <div class="lb-header">
+      <a href="#" class="active" id="login-box-link">Login</a>
+      <a href="#" id="signup-box-link">Sign Up</a>
+    </div>
+    <div class="social-login">
+      <a href="#">
+        <i class="fa fa-facebook fa-lg"></i>
+        Login in with facebook
+      </a>
+      <a href="#">
+        <i class="fa fa-google-plus fa-lg"></i>
+        log in with Google
+      </a>
+    </div>
+    <form class="email-login">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password"/>
+      </div>
+      <div class="u-form-group">
+        <button>Log in</button>
+      </div>
+      <div class="u-form-group">
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+    </form>
+    <form class="email-signup">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Confirm Password"/>
+      </div>
+      <div class="u-form-group">
+        <button>Sign Up</button>
+      </div>
+    </form>
+  </div></div>
+            </div></div></div>
 
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
       <div class="container">

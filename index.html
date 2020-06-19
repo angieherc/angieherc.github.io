@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="css/logs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       
@@ -40,11 +40,11 @@
 		    		<div class="row d-flex">
 		    			<div class="col-md-9 d-flex align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-envelope"></span></div>
-						    <span class="text"><a href="mailto:info@carbotec24.com" style="color: white">Hochwertige Mikrofasertücher</a></span>
+						    <span class="text"><a href="mailto:info@carbotec24.com" style="color: black">Hochwertige Mikrofasertücher</a></span>
 					    </div>
 					    <div class="col-md d-flex align-items-end text-left">
-    							<a href="#" class="pr-4"><span><i class="fa fa-user"></i></span> Mein Konto </a> 
-    							<a href="#" class="pl-3"> <span><i  class="ion-ios-cart"></i></span> Warenkorb</a>
+    							<a class="cd-signin pr-4" href="" target="_blank" class="" data-toggle="modal" data-target="#myModal7" class=" d-block"><span><i class="fa fa-user"></i></span> Mein Konto </a> 
+    							<a href="shop.html" class="pl-3"> <span><i  class="ion-ios-cart"></i></span> Warenkorb</a>
 					    </div>
 				    </div>
 			    </div>
@@ -64,36 +64,89 @@
                 <li class="nav-item"><a class="nav-link">|</a></li>
 	          <li class="nav-item"><a href="about.html" class="nav-link underline-on-hover"><strong>B2B</strong></a></li>
                 <li class="nav-item"><a class="nav-link">|</a></li>
-              <li class="nav-item"><a href="blog.html" class="nav-link underline-on-hover"><strong>BLOG</strong></a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link underline-on-hover"><strong>KONTAKT</strong></a></li>
 	        </ul>
 	      </div>
-            <div class="brand ">
-                <div class="navbar-brand description"><a href="index.html"><img src="images/logo-name.png" class="namebrand"> </a></div>
-                 <div class="description text-center d-flex align-self-stretch ftco-animate">
-            <img src="images/hex-logo.png" class="clip-circle-logo" ></div>
-                
-            </div>
-             <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto pl-5 ">
-                <li class="nav-item"><a href="contact.html" class="nav-link underline-on-hover"><strong>KONTAKT</strong></a></li>
+	        <ul class="navbar-nav ml-auto">
+               <li class="nav-item"><a href="blog.html" class="nav-link underline-on-hover"><strong>BLOG</strong></a></li>
                 <li class="nav-item"><a class="nav-link">|</a></li>
                 <li class="nav-item"><a href="" class="nav-link underline-on-hover"><strong>GESCHENKE</strong></a></li>
                 <li class="nav-item"><a class="nav-link">|</a></li>
 	          <li class="nav-item active"><a href="" class="nav-link underline-on-hover"><strong>SALE%</strong></a></li>
-                <li class="nav-item"><a class="nav-link">|</a></li>
-              <li class="nav-item">
-                 <form class="form-inline d-flex active-pink-2">
-  <input class="ssinput" type="search" placeholder="Search"
-    aria-label="Search">
-  <i class="fa fa-search" aria-hidden="true"></i>
-</form>
-             </li>
 	        </ul> 
 	      </div>
-	    </div>
 	  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" >    
+       <div class="container">
+               <div class="brand">
+                 <div class="navbar-nav-search">
+                 <form class="active-pink-2">
+                     <input type='text' class="ssinput" id='link_id'placeholder="Suchen..." style="font-size: 12px;">
+  <i class="fa fa-search" id='link' value='Search' onClick='javascript:goTo()'></i>
+</form></div>
+        
+                <div class="navbar-brand description"><a href="index.html"><img class="namebrand" src="images/logo-name.png" > </a></div>
+                 <div class="description text-center d-flex align-self-stretch ftco-animate">
+            <img src="images/hex-logo.png" class="clip-circle-logo" ></div>
+                
+            </div> </div>
+       </nav>
     <!-- END nav -->
       
+<!----------------------------------------------->
+ <div class="modal fade" id="myModal7" role="dialog">
+	<div class="modal-dialog" style="max-width: 550px;">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			
+			<div class="modal-body">
+  <div class="login-box">
+    <div class="lb-header">
+      <a href="#" class="active" id="login-box-link">Login</a>
+      <a href="#" id="signup-box-link">Sign Up</a>
+    </div>
+    <div class="social-login">
+      <a href="#">
+        <i class="fa fa-facebook fa-lg"></i>
+        Login in with facebook
+      </a>
+      <a href="#">
+        <i class="fa fa-google-plus fa-lg"></i>
+        log in with Google
+      </a>
+    </div>
+    <form class="email-login">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password"/>
+      </div>
+      <div class="u-form-group">
+        <button>Log in</button>
+      </div>
+      <div class="u-form-group">
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+    </form>
+    <form class="email-signup">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Confirm Password"/>
+      </div>
+      <div class="u-form-group">
+        <button>Sign Up</button>
+      </div>
+    </form>
+  </div></div>
+            </div></div></div>
+<!----------------------------------------------->   
     <section id="home-section" class="hero">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <div class="splitview skewed">
@@ -1217,7 +1270,8 @@ Von uns zur Verfügung gestellte elektronische Dateien, die zum Download geeigne
   $(this).addClass('active');
   $('.stars span').addClass('active');
 });   
-  </script>  
+  </script> 
+  <script src="js/logs.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>

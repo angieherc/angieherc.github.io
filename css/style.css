@@ -3427,7 +3427,7 @@ input[type="button"].btn-block {
   display: block; }
 
 .navbar {
-  position: relative;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3468,38 +3468,49 @@ input[type="button"].btn-block {
     text-decoration: none; }
 
 .clip-circle-logo {
-  width: 10%;
-  height: 10%;
-  position: relative;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: -125px; 
+  width: 20%;
+  height: 20%;
+  padding-left: 15px;
+  position:relative;
+  text-align: center;    
+  margin-top: -140px;
   display: block;
   z-index: 2;
 }
 
 .brand {
  position: absolute;
-  left: 0;
-  right: 0;
-  top: -30px;
-  z-index: 2;    
+  top: 0px;
+  left: 50%;
+  margin-left: -100px;
 }
 
 .namebrand {
-  width: 12%;
-  height: 12%;
+  width: 25%;
+  margin-top: -5px;
+  height: 25%;
   position: relative;
   text-align: center;
-  margin: 0 auto;
-  padding-top: 30px;
-  display: block; 
+  display: block;
+  align-content: center;
+  z-index: 2;
 }
 
-.searchbar {
-  position: relative;
-  margin: 0 auto;
-  text-align: left;
+.navbar-nav-search {
+    width: 65%;
+    position: relative;
+    left: 55%;
+    margin-top: -20px;
+    padding-left: 25px;
+    display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction:row
+  list-style: none; 
+    z-index: 2;
 }
 
 .navbar-nav {
@@ -8465,7 +8476,7 @@ h1, h2, h3, h4, h5,
         background: #fff !important;
         color: #000000; }
   .hero-wrap.hero-bread {
-    top: 45px;
+    top: 90px;
     padding: 10em 0; }
 
 .mouse {
@@ -11010,11 +11021,127 @@ span.active a:after,
 }
 
 .ssinput {
-  margin-top: 10px;
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 1px solid black;
   color: #e94e1b;
-  width: 50%;
+  width: 80%;
+}
+
+.login-box{
+  position:relative;
+  margin: 10px auto;
+  width: 500px;
+  height: 380px;
+  background-color: #fff;
+  padding: 30px 10px 10px 30px;
+}
+.lb-header{
+  position:relative;
+  color: #00415d;
+  margin: 5px 5px 10px 5px;
+  padding-bottom:10px;
+  border-bottom: 1px solid #eee;
+  text-align:center;
+  height:28px;
+}
+.lb-header a{
+  margin: 0 25px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  font-size: 15px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.lb-header .active{
+  color: #e94e1b;
+  font-size: 18px;
+}
+.social-login{
+  position:relative;
+  float: left;
+  width: 100%;
+  height:auto;
+  padding: 10px 0 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.social-login a{
+  position:relative;
+  float: left;
+  width:calc(40% - 8px);
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  padding: 12px;
+  border-radius: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0 3%;
+  text-align:center;
+}
+.social-login a i{
+  position: relative;
+  float: left;
+  width: 20px;
+  top: 2px;
+}
+.social-login a:first-child{
+  background-color: #49639F;
+  font-size: 10px;
+}
+.social-login a:last-child{
+  background-color: #DF4A32;
+  font-size: 10px;
+}
+.email-login,.email-signup{
+  position:relative;
+  float: left;
+  width: 100%;
+  height:auto;
+  margin-top: 20px;
+  text-align:center;
+}
+.u-form-group{
+  width:100%;
+  margin-bottom: 10px;
+}
+.u-form-group input[type="email"],
+.u-form-group input[type="password"]{
+  width: calc(50% - 22px);
+  height:45px;
+  outline: none;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  border-radius: 2px;
+  color: #333;
+  font-size:0.8rem;
+  -webkit-transition:all 0.1s linear;
+  -moz-transition:all 0.1s linear;
+  transition:all 0.1s linear;
+}
+.u-form-group input:focus{
+  border-color: #358efb;
+}
+.u-form-group button{
+  width:50%;
+  background-color: #e94e1b;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 14px 0;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+.forgot-password{
+  width:50%;
+  text-align: left;
+  text-decoration: underline;
+  color: #888;
+  font-size: 0.75rem;
 }
