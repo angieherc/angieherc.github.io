@@ -25,13 +25,24 @@
     <link rel="stylesheet" href="css/jquery.timepicker.css">
     <script src="jquery.min.js"></script>
     <script src="waltzerjs.js"></script>
+    <script src="datatowels.js"></script>
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/logs.css">
+    <style scoped lang="scss">
+    @import 'css/logs.scss';
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
       
+      <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+      <script src="semantic/dist/semantic.min.js"></script>
+    
   </head>
   <body class="goto-here">
     <div class="py-2 bg-gray">
@@ -42,8 +53,8 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-envelope"></span></div>
 						    <span class="text"><a href="mailto:info@carbotec24.com" style="color: black">Hochwertige Mikrofasertücher</a></span>
 					    </div>
-					    <div class="col-md d-flex align-items-end text-left">
-    							<a class="cd-signin pr-4" href="" target="_blank" class="" data-toggle="modal" data-target="#myModal7" class=" d-block"><span><i class="fa fa-user"></i></span> Mein Konto </a> 
+					    <div class="col-auto d-flex align-items-end text-left">
+    							<a class="cd-signin pr-4" href="" target="_blank" class="" data-toggle="modal" data-target="#elegantModalForm"><span><i class="fa fa-user"></i></span> Mein Konto </a>
     							<a href="shop.html" class="pl-3"> <span><i  class="ion-ios-cart"></i></span> Warenkorb</a>
 					    </div>
 				    </div>
@@ -57,95 +68,105 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav">
+	        <ul class="navbar-nav col-md-9 d-flex align-items-center">
                 <li class="nav-item"><a href="index.html" class="nav-link underline-on-hover"><strong>HOME</strong></a></li>
-                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a class="nav-link" id="pipe">|</a></li>
                 <li class="nav-item"><a href="shop.html" class="nav-link underline-on-hover"><strong>SHOP</strong></a></li>
-                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a class="nav-link" id="pipe">|</a></li>
 	          <li class="nav-item"><a href="about.html" class="nav-link underline-on-hover"><strong>B2B</strong></a></li>
-                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a class="nav-link" id="pipe">|</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link underline-on-hover"><strong>KONTAKT</strong></a></li>
 	        </ul>
-	      </div>
-	        <ul class="navbar-nav ml-auto">
+            
+	        <ul class="navbar-nav col-auto d-flex align-items-center">
                <li class="nav-item"><a href="blog.html" class="nav-link underline-on-hover"><strong>BLOG</strong></a></li>
-                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a class="nav-link" id="pipe">|</a></li>
                 <li class="nav-item"><a href="" class="nav-link underline-on-hover"><strong>GESCHENKE</strong></a></li>
-                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a class="nav-link" id="pipe">|</a></li>
 	          <li class="nav-item active"><a href="" class="nav-link underline-on-hover"><strong>SALE%</strong></a></li>
 	        </ul> 
+              
+	      </div>
 	      </div>
 	  </nav>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" >    
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" > 
        <div class="container">
-               <div class="brand">
-                 <div class="navbar-nav-search">
-                 <form class="active-pink-2">
-                     <input type='text' class="ssinput" id='link_id'placeholder="Suchen..." style="font-size: 12px;">
-  <i class="fa fa-search" id='link' value='Search' onClick='javascript:goTo()'></i>
-</form></div>
-        
+               
+           <div class="brand col-lg-3">
                 <div class="navbar-brand description"><a href="index.html"><img class="namebrand" src="images/logo-name.png" > </a></div>
                  <div class="description text-center d-flex align-self-stretch ftco-animate">
-            <img src="images/hex-logo.png" class="clip-circle-logo" ></div>
+            <img src="images/hex-logo.png" class="clip-circle-logo" ></div> 
+            </div>
+           <div class="col-auto d-flex align-items-end text-left">
+                 <div class="navbar-nav-search" id="top_panel">
+                 <form class="active-pink-2" action="#" method="#">
+                     <i class="fa fa-search" id='link' value='Search' onClick='javascript:goTo()'></i>
+                     <input type='text' class="ssinput search_term" autofocus autocomplete="on"id='link_id'placeholder="Suchen..." style="font-size: 12px;">
+                     <table class="results table-light" border="0"></table>
+                     </form></div>
                 
-            </div> </div>
+            </div>
+        
+        </div>
        </nav>
     <!-- END nav -->
-      
-<!----------------------------------------------->
- <div class="modal fade" id="myModal7" role="dialog">
-	<div class="modal-dialog" style="max-width: 550px;">
 
-		<!-- Modal content-->
-		<div class="modal-content">
-			
-			<div class="modal-body">
-  <div class="login-box">
-    <div class="lb-header">
-      <a href="#" class="active" id="login-box-link">Login</a>
-      <a href="#" id="signup-box-link">Sign Up</a>
+
+     
+<!----------------------------------------------->
+ <!-- Modal -->
+<div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <!--Content-->
+    <div class="modal-content form-elegant">
+      <!--Header-->
+      <div class="modal-header text-center">
+        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign in</strong></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mx-4">
+        <!--Body-->
+        <div class="md-form mb-5">
+          <input type="email" id="Form-email1" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="Form-email1">Your email</label>
+        </div>
+
+        <div class="md-form pb-3">
+          <input type="password" id="Form-pass1" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="Form-pass1">Your password</label>
+          <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#" class="blue-text ml-1">
+              Password?</a></p>
+        </div>
+
+        <div class="text-center mb-3">
+          <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Sign in</button>
+        </div>
+        <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in
+          with:</p>
+
+        <div class="row my-3 d-flex justify-content-center">
+          <!--Facebook-->
+          <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-facebook-f text-center"></i></button>
+          <!--Twitter-->
+          <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-twitter"></i></button>
+          <!--Google +-->
+          <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fab fa-google-plus-g"></i></button>
+        </div>
+      </div>
+      <!--Footer-->
+      <div class="modal-footer mx-5 pt-3 mb-1">
+        <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#" class="blue-text ml-1">
+            Sign Up</a></p>
+      </div>
     </div>
-    <div class="social-login">
-      <a href="#">
-        <i class="fa fa-facebook fa-lg"></i>
-        Login in with facebook
-      </a>
-      <a href="#">
-        <i class="fa fa-google-plus fa-lg"></i>
-        log in with Google
-      </a>
-    </div>
-    <form class="email-login">
-      <div class="u-form-group">
-        <input type="email" placeholder="Email"/>
-      </div>
-      <div class="u-form-group">
-        <input type="password" placeholder="Password"/>
-      </div>
-      <div class="u-form-group">
-        <button>Log in</button>
-      </div>
-      <div class="u-form-group">
-        <a href="#" class="forgot-password">Forgot password?</a>
-      </div>
-    </form>
-    <form class="email-signup">
-      <div class="u-form-group">
-        <input type="email" placeholder="Email"/>
-      </div>
-      <div class="u-form-group">
-        <input type="password" placeholder="Password"/>
-      </div>
-      <div class="u-form-group">
-        <input type="password" placeholder="Confirm Password"/>
-      </div>
-      <div class="u-form-group">
-        <button>Sign Up</button>
-      </div>
-    </form>
-  </div></div>
-            </div></div></div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Modal -->
 <!----------------------------------------------->   
     <section id="home-section" class="hero">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

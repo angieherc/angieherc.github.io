@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -26,7 +28,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-    <body class="goto-here">
+  <body class="goto-here">
     <div class="py-2 bg-gray">
     	<div class="container">
 	    		<div class="col-lg-12 d-block">
@@ -35,8 +37,8 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-envelope"></span></div>
 						    <span class="text"><a href="mailto:info@carbotec24.com" style="color: black">Hochwertige Mikrofasertücher</a></span>
 					    </div>
-					    <div class="col-md d-flex align-items-end text-left">
-    							<a class="cd-signin pr-4" href="" target="_blank" class="" data-toggle="modal" data-target="#myModal7" class=" d-block"><span><i class="fa fa-user"></i></span> Mein Konto </a> 
+					    <div class="col-auto d-flex align-items-end text-left">
+    							<a class="cd-signin pr-4" href="" target="_blank" class="" data-toggle="modal" data-target="#elegantModalForm"><span><i class="fa fa-user"></i></span> Mein Konto </a>
     							<a href="shop.html" class="pl-3"> <span><i  class="ion-ios-cart"></i></span> Warenkorb</a>
 					    </div>
 				    </div>
@@ -50,39 +52,46 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav">
+	        <ul class="navbar-nav col-md-9 d-flex align-items-center">
                 <li class="nav-item"><a href="index.html" class="nav-link underline-on-hover"><strong>HOME</strong></a></li>
-                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a class="nav-link" id="pipe">|</a></li>
                 <li class="nav-item"><a href="shop.html" class="nav-link underline-on-hover"><strong>SHOP</strong></a></li>
-                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a class="nav-link" id="pipe">|</a></li>
 	          <li class="nav-item"><a href="about.html" class="nav-link underline-on-hover"><strong>B2B</strong></a></li>
-                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a class="nav-link" id="pipe">|</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link underline-on-hover"><strong>KONTAKT</strong></a></li>
 	        </ul>
-	      </div>
-	        <ul class="navbar-nav ml-auto">
+            
+	        <ul class="navbar-nav col-auto d-flex align-items-center">
                <li class="nav-item"><a href="blog.html" class="nav-link underline-on-hover"><strong>BLOG</strong></a></li>
-                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a class="nav-link" id="pipe">|</a></li>
                 <li class="nav-item"><a href="" class="nav-link underline-on-hover"><strong>GESCHENKE</strong></a></li>
-                <li class="nav-item"><a class="nav-link">|</a></li>
+                <li class="nav-item"><a class="nav-link" id="pipe">|</a></li>
 	          <li class="nav-item active"><a href="" class="nav-link underline-on-hover"><strong>SALE%</strong></a></li>
 	        </ul> 
+              
+	      </div>
 	      </div>
 	  </nav>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" >    
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" > 
        <div class="container">
-               <div class="brand">
-                 <div class="navbar-nav-search">
-                 <form class="active-pink-2">
-                     <input type='text' class="ssinput" id='link_id'placeholder="Suchen..." style="font-size: 12px;">
-  <i class="fa fa-search" id='link' value='Search' onClick='javascript:goTo()'></i>
-</form></div>
-        
+               
+           <div class="brand col-lg-3">
                 <div class="navbar-brand description"><a href="index.html"><img class="namebrand" src="images/logo-name.png" > </a></div>
                  <div class="description text-center d-flex align-self-stretch ftco-animate">
-            <img src="images/hex-logo.png" class="clip-circle-logo" ></div>
+            <img src="images/hex-logo.png" class="clip-circle-logo" ></div> 
+            </div>
+           <div class="col-auto d-flex align-items-end text-left">
+                 <div class="navbar-nav-search" id="top_panel">
+                 <form class="active-pink-2" action="#" method="#">
+                     <i class="fa fa-search" id='link' value='Search' onClick='javascript:goTo()'></i>
+                     <input type='text' class="ssinput search_term" autofocus autocomplete="on"id='link_id'placeholder="Suchen..." style="font-size: 12px;">
+                     <table class="results table-light" border="0"></table>
+                     </form></div>
                 
-            </div> </div>
+            </div>
+        
+        </div>
        </nav>
     <!-- END nav -->
       
