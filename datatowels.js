@@ -8,21 +8,21 @@ var vehicles = {
         'Towel Two': {
         id: '3456',
         name: 'T2',
-        model: 'blue',
+        link: "shop.html",
         type: 'house'
     },
         'Towel Three': {
         id: '8765',
         name: 'T3',
-        model: 'orange',
-        type: 'office'
+        url: 'orange',
+        type: 'shop.html'
     },
         'Towel Four': {
         id: '9078',
         name: 'T4',
         model: 'yellow',
-        type: 'kitchen'
-    }
+        type: 'kitchen',
+        }
 };
 
 $(function () {
