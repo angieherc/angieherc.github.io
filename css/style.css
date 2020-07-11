@@ -3486,14 +3486,14 @@ input[type="button"].btn-block {
   @media all and (max-width: 959px) {
     .brand {display:block;}
     #pipe {display:block;}
-    #ssearch1 {display:block;}
+    #namebrand {display:block;}
     #ssearch2 {display:none;}
 }
 
 @media all and (max-width: 768px) {
      .brand {display:none;}
     #pipe {display:none;}
-    #ssearch1 {visibility: hidden;
+    #namebrand {visibility: hidden;
     display: none;}
     #ssearch2 {display:block;}
 }
@@ -3511,7 +3511,6 @@ input[type="button"].btn-block {
 .navbar-nav-search {
     position: relative;
     margin-top: -20px;
-    padding-left: 61vw;
     display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3525,7 +3524,7 @@ input[type="button"].btn-block {
 
 .navbar-nav-search1 {
     position: relative;
-    margin-top: -100px;
+    margin-top: -10px;
     display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
