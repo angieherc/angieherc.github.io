@@ -3475,6 +3475,7 @@ input[type="button"].btn-block {
   text-align: center;    
   margin-top: -140px;
   display: block;
+  z-index: 2;
 }
 
 .brand {
@@ -3482,6 +3483,7 @@ input[type="button"].btn-block {
   top: 0px;
   left: 50%;
   margin-left: -100px;
+    z-index: 2;
 }
   @media all and (max-width: 959px) {
     .brand {display:block;}
@@ -3506,6 +3508,7 @@ input[type="button"].btn-block {
   text-align: center;
   display: block;
   align-content: center;
+  z-index: 2;
 }
 
 .navbar-nav-search {
@@ -3519,7 +3522,6 @@ input[type="button"].btn-block {
   -ms-flex-direction: column;
   flex-direction:row
   list-style: none; 
-    z-index: 2;
 }
 
 .navbar-nav-search1 {
@@ -10948,7 +10950,7 @@ video#video_container {
 #popup1 .popup {margin: 0px auto; padding: 50px 20px;background: #fff; border-radius: 0px; height: 260px; width:690px; position: relative;    text-align: center;top: 50% !important;   position: fixed !important;-moz-transform: translateY(-50%);    -webkit-transform: translateY(-50%);  -o-transform: translateY(-50%);   -ms-transform: translateY(-50%);    transform: translateY(-50%);right: 0px; left: 0;}
 #popup1 .popup h2 { margin-top: 0; color: #333;}
 #popup1 .popup .close {position: absolute; top: 0px;  right: 0px; transition: all 200ms; font-size: 30px;  font-weight: normal; text-decoration: none;  text-align: center;    background: #333;  border-radius: 0;  cursor: pointer;  float: right;  padding: 0;  color: #fff;  margin-top: 0;  margin-right: 0;  height: 40px;  width: 40px;    line-height: 45px;}
-#popup1 .popup .close:hover {color: #06D85F;}
+#popup1 .popup .close:hover {color: #e95239;}
 #popup1 .popup .content {max-height: 30%;overflow: auto;}
 #popup1 .newletter-title h2 {   font-size: 24px;  text-transform: uppercase;  color: #000;  font-weight: 700;  letter-spacing: 3px;  margin: 0 0 15px;}
 #popup1 .box-content label {  font-weight: 400;  max-width: 560px;  display: inline-block;  margin-bottom: 5px;  font-size: 14px; line-height: 26px;}
