@@ -26,7 +26,6 @@
 This is a website to show my resume in an interactive way!	
 go to [Website](https://angieherc.github.io/) to take a look!
 
-Angie ♡
 
 ### Built With
 
@@ -36,3 +35,5 @@ This section should give a quick guide of the technology implemented.
 * [Json](https://json.com)
 * HTML5
 * CSS
+
+Angie ♡
