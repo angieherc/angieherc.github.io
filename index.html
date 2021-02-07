@@ -621,17 +621,8 @@ stable mode with the implementation of a leap motion sensor.</p>
 
       <div class="row mt-2">
 
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-map"></i>
-            <h3>My Address</h3>
-            <p>Seckenheimer Straße 14</p>
-<p>Schwetzingerstadt/Oststadt</p>
-<p>68165 Mannheim</p>
-          </div>
-        </div>
 
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+        <div class="col-md-4 mt-4 mt-md-0 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-share-alt"></i>
             <h3>Social Profiles</h3>
@@ -643,48 +634,41 @@ stable mode with the implementation of a leap motion sensor.</p>
           </div>
         </div>
 
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
+        <div class="col-md-4 mt-4 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-envelope"></i>
             <h3>Email Me</h3>
             <a href="mailto:angieherc@gmail.com">Angieherc@gmail.com</a>
           </div>
         </div>
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
+          
+          <div class="col-md-4 mt-4 d-flex align-items-stretch">
           <div class="info-box">
-            <i class="bx bx-phone-call"></i>
+              <i class="bx bx-phone-call"></i>
             <h3>Call Me</h3>
             <a href="tel:123-456-7890">+49 177 469 83 36</a>
           </div>
         </div>
       </div>
-
-      <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
-        <div class="form-row">
-          <div class="col-md-6 form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-            <div class="validate"></div>
-          </div>
-          <div class="col-md-6 form-group">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-            <div class="validate"></div>
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-          <div class="validate"></div>
-        </div>
-        <div class="form-group">
-          <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-          <div class="validate"></div>
-        </div>
-        <div class="mb-3">
-          <div class="loading">Loading</div>
-          <div class="error-message"></div>
-          <div class="sent-message">Your message has been sent. Thank you!</div>
-        </div>
-        <div class="text-center"><button type="submit">Send Message</button></div>
-      </form>
+        
+          <form action="http://formspree.io/angieherc@gmail.com" method="post" class="php-email-form mt-4">
+          
+  <div class="form-group">
+    <label for="email">Name:</label>
+    <input type="text" required="" name="name">
+  </div>
+      
+	<div class="input-container">
+		<input type="text" required="" name="name">
+        <input type="email" class="form-control" id="email" name="_replyto">
+		<label>Email address:</label>		
+	</div>
+	<div class="input-container">		
+		<textarea name="Text1"></textarea>
+		<label>Message</label>
+	</div>
+		<button type="submit" value="Send" class="btn">submit</button>
+        </form>
 
     </div>
   </section><!-- End Contact Section -->
