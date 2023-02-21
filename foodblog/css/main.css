@@ -1721,14 +1721,14 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  *
  * ------------------------------------------------------------------- */
 .s-pageheader {
-   min-height: 174px;
-   background-image: url(../images/hero-bg.jpg);
+   background-image: url(../images/hero-bg.png);
    background-repeat: no-repeat;
    background-position: center center;
    position: relative;
+   background-size:cover;
 }
 
-.s-pageheader::before {
+.s-pageheaders::before {
    display: block;
    content: "";
    position: absolute;
@@ -1736,7 +1736,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
    left: 0;
    width: 100%;
    height: 100%;
-   background-color: #151515;
+   background-image: url(../images/hero-bg.png);
    opacity: .95;
 }
 
@@ -1768,7 +1768,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * ## header logo
  * ------------------------------------------------------------------- */
 .header__logo {
-   display: inline-block;
+   display:inline-flex;
    margin: 0;
    padding: 0;
    z-index: 501;
@@ -1776,7 +1776,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .header__logo a {
    display: block;
-   margin: 0 0 0 6px;
+   margin: 0 0 0 1px;
    padding: 0;
    outline: 0;
    border: none;
@@ -1785,8 +1785,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .header__logo img {
-   width: 265px;
-   height: 48px;
+   width: 20em;
+   position:relative;
 }
 
 
@@ -1805,7 +1805,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .header__social a {
-   color: #FFFFFF;
+   color: #007B7F;
 }
 
 .header__social li {
@@ -1997,7 +1997,7 @@ body.search-is-visible {
    line-height: 21px;
    content: "Search";
    display: block;
-   color: #FFFFFF;
+   color: #007B7F;
    float: left;
    padding-right: 33px;
 }
@@ -2170,13 +2170,13 @@ body.search-is-visible {
 
 .header__nav li a {
    display: block;
-   color: rgba(255, 255, 255, 0.6);
+   color: rgba(0, 0, 0, 0.6);
    line-height: 39px;
 }
 
 .header__nav li.has-children > a::after {
-   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-   border-right: 1px solid rgba(255, 255, 255, 0.3);
+   border-bottom: 1px solid rgba(0, 0, 0);
+   border-right: 1px solid rgba(0, 0, 0);
    content: '';
    display: block;
    height: 5px;
@@ -2197,7 +2197,7 @@ body.search-is-visible {
 }
 
 .header__nav li:hover > a, .header__nav li:focus > a {
-   color: #FFFFFF;
+   color: #1B1B1B;
 }
 
 .header__nav li:hover li, .header__nav li:focus li {
@@ -2205,7 +2205,7 @@ body.search-is-visible {
 }
 
 .header__nav li.current > a {
-   color: #FFFFFF;
+   color: #1B1B1B;
 }
 
 .header__nav li ul {
