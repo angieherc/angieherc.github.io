@@ -631,11 +631,13 @@ a {
   margin-left: auto;
   margin-right: auto;
   width: 30%;
+    align-items: center;
 }
 
 .sociali-menu ul li{
     list-style: none;
     margin: 0 15px;
+    align-items: center;
 }
 
 .sociali-menu ul li .fab{
@@ -682,4 +684,62 @@ a {
 }
 .sociali-menu ul li:nth-child(4) a:hover{
     background-color: #F87666;
+}
+
+
+.containerx > a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  overflow: hidden;
+}
+
+.containerx > a::after {
+  content: "";
+  background: linear-gradient(transparent,black);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  transition-duration: .75s;
+}
+
+.containerx > a:hover::after {
+  transform: translateY(50%);
+}
+
+.containerx > a > * {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition-duration: 1s;
+}
+
+.containerx > a:hover > img {
+  transform: scale(1.05);
+}
+
+.containerx {
+  display: grid;
+  grid-gap: 15 px;
+  grid-template-columns: repeat(auto-fit, minmax(240px;), 1fr));
+  grid-auto-rows: 240px;
+  grid-auto-flow: dense;
+}
+
+.horizontal {
+  grid-column: span 2;
+}
+
+.vertical {
+  grid-row: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
 }
