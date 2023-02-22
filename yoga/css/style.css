@@ -630,8 +630,8 @@ a {
     display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
-    align-items: center;
+  width: 17%;
+    text-align: center;
 }
 
 .sociali-menu ul li{
@@ -652,7 +652,6 @@ a {
 }
 
 .sociali-menu ul li a{
-    position: relative;
     display: block;
     width: 60px;
     height: 60px;
