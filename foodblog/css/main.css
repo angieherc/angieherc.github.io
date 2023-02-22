@@ -101,7 +101,7 @@ body {
  * ## links
  * ------------------------------------------------------------------- */
 a {
-   color: #0054a5;
+   color: #E26D5A;
    -webkit-transition: all 0.3s ease-in-out;
    transition: all 0.3s ease-in-out;
 }
@@ -387,7 +387,7 @@ ul.disc li::before {
    width: 8px;
    height: 8px;
    border-radius: 50%;
-   background: #0054a5;
+   background: #E26D5A;
    position: absolute;
    left: -17px;
    top: 11px;
@@ -396,7 +396,7 @@ ul.disc li::before {
 
 dt {
    margin: 0;
-   color: #0054a5;
+   color: #E26D5A;
 }
 
 dd {
@@ -738,8 +738,8 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-   color: #0054a5;
-   border-bottom: 2px solid #0054a5;
+   color: #E26D5A;
+   border-bottom: 2px solid #E26D5A;
 }
 
 label, legend {
@@ -801,7 +801,7 @@ label > input[type="checkbox"], label > input[type="radio"] {
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus
 input:-webkit-autofill, textarea:-webkit-autofill, textarea:-webkit-autofill:hover
 textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
-   -webkit-text-fill-color: #0054a5;
+   -webkit-text-fill-color: #E26D5A;
    transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -875,8 +875,8 @@ button.btn--primary:focus,
 input[type="submit"].btn--primary:focus,
 input[type="reset"].btn--primary:focus,
 input[type="button"].btn--primary:focus {
-   background: #0054a5;
-   border-color: #0054a5;
+   background: #E26D5A;
+   border-color: #E26D5A;
 }
 
 /* button modifiers
@@ -903,8 +903,8 @@ input[type="button"].btn--primary:focus {
 }
 
 .btn--stroke:hover, button.btn--stroke:hover {
-   border: 0.2rem solid #0054a5;
-   color: #0054a5;
+   border: 0.2rem solid #E26D5A;
+   color: #E26D5A;
 }
 
 .btn--pill, button.btn--pill {
@@ -1120,7 +1120,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .stats-tabs li a:hover {
-   color: #0054a5;
+   color: #E26D5A;
 }
 
 .stats-tabs li a em {
@@ -1566,7 +1566,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .masonry .entry__meta a {
-   color: #0054a5;
+   color: #E26D5A;
 }
 
 .masonry .entry__meta a:hover, .masonry .entry__meta a:focus {
@@ -3078,7 +3078,7 @@ html.no-csstransitions .featured {
 }
 
 .s-extra a:hover, .s-extra a:focus {
-   color: #0054a5;
+   color: #E26D5A;
 }
 
 .s-extra h3, .s-extra h5 {
@@ -3387,8 +3387,8 @@ footer h4::after {
    top: 0;
    right: 0;
    color: #FFFFFF;
-   background: #0054a5;
-   border-color: #0054a5;
+   background: #E26D5A;
+   border-color: #E26D5A;
    padding: 0 15px;
    border-radius: 0 3px 3px 0;
 }
@@ -3470,7 +3470,7 @@ footer h4::after {
 
 .go-top a:hover, .go-top a:focus {
    color: #FFFFFF;
-   background-color: #0054a5;
+   background-color: #E26D5A;
 }
 
 .go-top.link-is-visible {
@@ -4219,7 +4219,7 @@ footer h4::after {
 }
 
 #map-wrap #map-zoom-in:hover::before, #map-wrap #map-zoom-out:hover::before {
-   background-color: #0054a5;
+   background-color: #E26D5A;
 }
 
 /* contact form
