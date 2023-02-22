@@ -2352,14 +2352,17 @@ body.search-is-visible {
 
    .header__nav li ul li a {
       padding: 7.5px 1.5rem 7.5px 1.5rem;
+       color: #ffffff;
    }
 
    .header__nav > li {
       border-top: 1px solid rgba(255, 255, 255, 0.03);
+       
    }
 
    .header__nav > li a {
       line-height: 54px;
+       color: #ffffff;
    }
 
    body.nav-wrap-is-visible {
@@ -3405,8 +3408,13 @@ footer h4::after {
 /* -------------------------------------------------------------------
  * ## copyright
  * ------------------------------------------------------------------- */
+.s-footer__bottom .s-footer__copyright a {
+   color: #2F2F2F;
+}
+
 .s-footer__bottom .s-footer__copyright span {
    display: inline-block;
+   color: #2F2F2F;
 }
 
 .s-footer__bottom .s-footer__copyright span::after {
@@ -3418,6 +3426,7 @@ footer h4::after {
 
 .s-footer__bottom .s-footer__copyright span:last-child::after {
    display: none;
+    
 }
 
 
