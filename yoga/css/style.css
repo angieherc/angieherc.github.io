@@ -571,7 +571,7 @@ a {
   padding: 3em 0; }
   .site-footer p:last-child {
     margin-bottom: 0; }
-  .site-footer .social-item {
+  .site-footer .sociali-item {
     display: inline-block;
     width: 60px;
     height: 60px;
@@ -580,7 +580,7 @@ a {
     border-radius: 50%;
     font-size: 22px;
     margin: 0 10px; }
-    .site-footer .social-item > span {
+    .site-footer .sociali-item > span {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -622,7 +622,7 @@ a {
 .letter-spacing {
   letter-spacing: .2rem;
   color: rgba(255, 255, 255, 0.5) !important; }
-  
+
 .containerx > a {
   position: relative;
   display: flex;
