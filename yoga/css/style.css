@@ -270,9 +270,9 @@ a {
     outline: none;
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
-  .btn.btn-primary {
+  .btn.btn-primari {
     color: #fff; }
-    .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
+    .btn.btn-primari:hover, .btn.btn-primari:active, .btn.btn-primari:focus {
       background: #333; }
 
 .progress {
