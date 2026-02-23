@@ -68,13 +68,13 @@ jobs:
 
                 await github.graphql(`
                   mutation {
-                    updateProjectItemFieldValue(input: {
+                    updateProjectV2ItemFieldValue(input: {
                       projectId: "${item.project.id}"
                       itemId: "${item.id}"
                       fieldId: "${SERVICE_FIELD_ID}"
                       value: { singleSelectOptionId: "${OS_OPTION_ID}" }
                     }) {
-                      projectItem {
+                      projectV2Item {
                         id
                       }
                     }
