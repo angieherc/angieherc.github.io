@@ -11,7 +11,7 @@ jobs:
       - name: Update Project Fields
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.PROJECT_PAT }}
           script: |
 
             const TARGET_PROJECT_ID = "PVT_kwHOAQG1vc4BP7eW";
