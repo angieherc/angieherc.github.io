@@ -2,7 +2,7 @@ name: Project Field Automation
 
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, labeled]
 
 jobs:
   update-fields:
@@ -29,7 +29,6 @@ jobs:
             const issueTitle = context.payload.issue.title || "";
             const issueBody = context.payload.issue.body || "";
 
-            // Fetch all project items linked to this issue
             const data = await github.graphql(`
               query {
                 node(id: "${issueNodeId}") {
@@ -37,23 +36,23 @@ jobs:
                     projectItems(first: 20) {
                       nodes {
                         id
-                        project {
-                          id
-                        }
+                        project { id }
                       }
                     }
                   }
                 }
               }
             `);
-            console.log(JSON.stringify(data, null, 2));
 
             const items = data.node.projectItems.nodes;
-            console.log(items);
+
+            if (items.length === 0) {
+              console.log("Issue not in any project yet.");
+              return;
+            }
 
             for (const item of items) {
 
-              // Condition 1: Project match → Area = Area3
               if (item.project.id === TARGET_PROJECT_ID) {
                 await github.graphql(`
                   mutation {
@@ -67,11 +66,9 @@ jobs:
                     }
                   }
                 `);
-
                 console.log("Area set to Area3.");
               }
 
-              // Condition 2: Contains "openstack" → Service = os
               const text = (issueTitle + " " + issueBody).toLowerCase();
 
               if (text.includes("openstack")) {
@@ -87,7 +84,6 @@ jobs:
                     }
                   }
                 `);
-
                 console.log("Service set to os.");
               }
             }
