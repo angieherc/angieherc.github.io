@@ -53,37 +53,47 @@ jobs:
 
             for (const item of items) {
 
+              // --- SET AREA ---
               if (item.project.id === TARGET_PROJECT_ID) {
+
                 await github.graphql(`
                   mutation {
-                    updateProjectV2ItemFieldValue(input: {
+                    updateProjectItemFieldValue(input: {
                       projectId: "${TARGET_PROJECT_ID}"
                       itemId: "${item.id}"
                       fieldId: "${AREA_FIELD_ID}"
                       value: { singleSelectOptionId: "${AREA3_OPTION_ID}" }
                     }) {
-                      projectV2Item { id }
+                      projectItem {
+                        id
+                      }
                     }
                   }
                 `);
+
                 console.log("Area set to Area3.");
               }
 
+              // --- SET SERVICE ---
               const text = (issueTitle + " " + issueBody).toLowerCase();
 
               if (text.includes("openstack")) {
+
                 await github.graphql(`
                   mutation {
-                    updateProjectV2ItemFieldValue(input: {
+                    updateProjectItemFieldValue(input: {
                       projectId: "${item.project.id}"
                       itemId: "${item.id}"
                       fieldId: "${SERVICE_FIELD_ID}"
                       value: { singleSelectOptionId: "${OS_OPTION_ID}" }
                     }) {
-                      projectV2Item { id }
+                      projectItem {
+                        id
+                      }
                     }
                   }
                 `);
+
                 console.log("Service set to os.");
               }
             }
