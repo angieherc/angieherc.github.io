@@ -48,6 +48,7 @@ jobs:
             `);
 
             const items = data.node.projectItems.nodes;
+            console.log(items);
 
             for (const item of items) {
 
