@@ -28,77 +28,104 @@ jobs:
             const issueNodeId = context.payload.issue.node_id;
             const issueTitle = context.payload.issue.title || "";
             const issueBody = context.payload.issue.body || "";
+            const text = (issueTitle + " " + issueBody).toLowerCase();
 
-            // --- WAIT FOR PROJECT ATTACHMENT (race condition fix) ---
-            console.log("Waiting 3 seconds for project linkage...");
-            await new Promise(resolve => setTimeout(resolve, 3000));
+            // -------- RETRY LOOP FOR PROJECT ATTACHMENT --------
+            let items = [];
+            for (let attempt = 1; attempt <= 5; attempt++) {
 
-            // --- FETCH PROJECT ITEMS ---
-            const data = await github.graphql(`
-              query {
-                node(id: "${issueNodeId}") {
-                  ... on Issue {
-                    projectItems(first: 20) {
-                      nodes {
-                        id
-                        project { id }
+              console.log(`Checking project linkage (attempt ${attempt})...`);
+
+              const data = await github.graphql(`
+                query {
+                  node(id: "${issueNodeId}") {
+                    ... on Issue {
+                      projectItems(first: 20) {
+                        nodes {
+                          id
+                          project { id }
+                          fieldValues(first: 20) {
+                            nodes {
+                              ... on ProjectV2ItemFieldSingleSelectValue {
+                                field { id }
+                                optionId
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   }
                 }
-              }
-            `);
+              `);
 
-            const items = data.node.projectItems.nodes;
+              items = data.node.projectItems.nodes;
+
+              if (items.length > 0) break;
+
+              await new Promise(resolve => setTimeout(resolve, 2000));
+            }
 
             if (items.length === 0) {
-              console.log("Issue not in any project yet.");
+              console.log("Issue never attached to project. Exiting.");
               return;
             }
 
+            // -------- PROCESS ITEMS --------
             for (const item of items) {
 
-              // --- SET AREA ---
-              if (item.project.id === TARGET_PROJECT_ID) {
-
-                await github.graphql(`
-                  mutation {
-                    updateProjectV2ItemFieldValue(input: {
-                      projectId: "${item.project.id}"
-                      itemId: "${item.id}"
-                      fieldId: "${AREA_FIELD_ID}"
-                      value: { singleSelectOptionId: "${AREA3_OPTION_ID}" }
-                    }) {
-                      projectV2Item {
-                        id
-                      }
-                    }
-                  }
-                `);
-
-                console.log("Area set to Area3.");
+              const existingValues = {};
+              for (const fv of item.fieldValues.nodes) {
+                existingValues[fv.field.id] = fv.optionId;
               }
 
-              // --- SET SERVICE ---
-              const text = (issueTitle + " " + issueBody).toLowerCase();
+              // ----- SET AREA (only if missing or different) -----
+              if (item.project.id === TARGET_PROJECT_ID) {
 
-              if (text.includes("openstack")) {
+                if (existingValues[AREA_FIELD_ID] !== AREA3_OPTION_ID) {
 
-                await github.graphql(`
-                  mutation {
-                    updateProjectV2ItemFieldValue(input: {
-                      projectId: "${item.project.id}"
-                      itemId: "${item.id}"
-                      fieldId: "${SERVICE_FIELD_ID}"
-                      value: { singleSelectOptionId: "${OS_OPTION_ID}" }
-                    }) {
-                      projectV2Item {
-                        id
+                  console.log("Setting Area to Area3...");
+
+                  await github.graphql(`
+                    mutation {
+                      updateProjectV2ItemFieldValue(input: {
+                        projectId: "${item.project.id}"
+                        itemId: "${item.id}"
+                        fieldId: "${AREA_FIELD_ID}"
+                        value: { singleSelectOptionId: "${AREA3_OPTION_ID}" }
+                      }) {
+                        projectV2Item { id }
                       }
                     }
-                  }
-                `);
+                  `);
 
-                console.log("Service set to os.");
+                } else {
+                  console.log("Area already correct. Skipping.");
+                }
+              }
+
+              // ----- SET SERVICE (only if keyword + different) -----
+              if (text.includes("openstack")) {
+
+                if (existingValues[SERVICE_FIELD_ID] !== OS_OPTION_ID) {
+
+                  console.log("Setting Service to os...");
+
+                  await github.graphql(`
+                    mutation {
+                      updateProjectV2ItemFieldValue(input: {
+                        projectId: "${item.project.id}"
+                        itemId: "${item.id}"
+                        fieldId: "${SERVICE_FIELD_ID}"
+                        value: { singleSelectOptionId: "${OS_OPTION_ID}" }
+                      }) {
+                        projectV2Item { id }
+                      }
+                    }
+                  `);
+
+                } else {
+                  console.log("Service already correct. Skipping.");
+                }
               }
             }
