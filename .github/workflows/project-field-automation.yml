@@ -29,8 +29,25 @@ jobs:
             const issueTitle = context.payload.issue.title || "";
             const issueBody = context.payload.issue.body || "";
 
-            
-        
+            // --- WAIT FOR PROJECT ATTACHMENT (race condition fix) ---
+            console.log("Waiting 3 seconds for project linkage...");
+            await new Promise(resolve => setTimeout(resolve, 3000));
+
+            // --- FETCH PROJECT ITEMS ---
+            const data = await github.graphql(`
+              query {
+                node(id: "${issueNodeId}") {
+                  ... on Issue {
+                    projectItems(first: 20) {
+                      nodes {
+                        id
+                        project { id }
+                      }
+                    }
+                  }
+                }
+              }
+            `);
 
             const items = data.node.projectItems.nodes;
 
@@ -58,6 +75,7 @@ jobs:
                     }
                   }
                 `);
+
                 console.log("Area set to Area3.");
               }
 
