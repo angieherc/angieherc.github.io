@@ -32,6 +32,7 @@ jobs:
 
             // -------- RETRY LOOP FOR PROJECT ATTACHMENT --------
             let items = [];
+
             for (let attempt = 1; attempt <= 5; attempt++) {
 
               console.log(`Checking project linkage (attempt ${attempt})...`);
@@ -63,14 +64,21 @@ jobs:
                 }
               `);
 
-              items = data.node.projectItems.nodes;
+              if (
+                data &&
+                data.node &&
+                data.node.projectItems &&
+                data.node.projectItems.nodes
+              ) {
+                items = data.node.projectItems.nodes;
+              }
 
               if (items.length > 0) break;
 
               await new Promise(resolve => setTimeout(resolve, 2000));
             }
 
-            if (items.length === 0) {
+            if (!items || items.length === 0) {
               console.log("Issue never attached to project. Exiting.");
               return;
             }
@@ -78,12 +86,27 @@ jobs:
             // -------- PROCESS ITEMS --------
             for (const item of items) {
 
-              const existingValues = {};
-              for (const fv of item.fieldValues.nodes) {
-                existingValues[fv.field.id] = fv.optionId;
+              if (!item.project || !item.project.id) {
+                console.log("Skipping item without project reference");
+                continue;
               }
 
-              // ----- SET AREA (only if missing or different) -----
+              const existingValues = {};
+
+              if (item.fieldValues && item.fieldValues.nodes) {
+                for (const fv of item.fieldValues.nodes) {
+                  if (
+                    fv &&
+                    fv.field &&
+                    fv.field.id &&
+                    fv.optionId
+                  ) {
+                    existingValues[fv.field.id] = fv.optionId;
+                  }
+                }
+              }
+
+              // ----- SET AREA -----
               if (item.project.id === TARGET_PROJECT_ID) {
 
                 if (existingValues[AREA_FIELD_ID] !== AREA3_OPTION_ID) {
@@ -108,7 +131,7 @@ jobs:
                 }
               }
 
-              // ----- SET SERVICE (only if keyword + different) -----
+              // ----- SET SERVICE -----
               if (text.includes("openstack")) {
 
                 if (existingValues[SERVICE_FIELD_ID] !== OS_OPTION_ID) {
