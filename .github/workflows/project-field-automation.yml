@@ -1,0 +1,81 @@
+name: Project Field Automation
+
+on:
+  project_v2_item:
+    types: [created]
+
+jobs:
+  update-fields:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update Project Fields
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const TARGET_PROJECT_ID = "PVT_kwHOAQG1vc4BP7eW";        // ID of angieherc-test-project
+            const AREA_FIELD_ID = "PVTSSF_lAHOAQG1vc4BP7eWzg-MhYc";         // Field ID for "Area"
+            const AREA3_OPTION_ID = "08ac0c33";              // Option ID for "Area3"
+            const SERVICE_FIELD_ID = "PVTSSF_lAHOAQG1vc4BP7eWzg-MitY";      // Field ID for "Service"
+            const OS_OPTION_ID = "af4dfc2b";                 // Option ID for "os"
+
+            const item = context.payload.project_v2_item;
+
+            // Fetch the issue linked to the project item
+            const itemData = await github.graphql(`
+              query {
+                node(id: "${item.node_id}") {
+                  ... on ProjectV2Item {
+                    content {
+                      ... on Issue {
+                        id
+                        title
+                        body
+                      }
+                    }
+                  }
+                }
+              }
+            `);
+
+            const issue = itemData.node.content;
+            if (!issue) {
+              console.log("No issue attached.");
+              return;
+            }
+
+            // 1️⃣ Condition: Project match → Area = Area3
+            if (item.project_node_id === TARGET_PROJECT_ID) {
+              await github.graphql(`
+                mutation {
+                  updateProjectV2ItemFieldValue(input: {
+                    projectId: "${TARGET_PROJECT_ID}"
+                    itemId: "${item.node_id}"
+                    fieldId: "${AREA_FIELD_ID}"
+                    value: { singleSelectOptionId: "${AREA3_OPTION_ID}" }
+                  }) {
+                    projectV2Item { id }
+                  }
+                }
+              `);
+              console.log("Area set to Area3.");
+            }
+
+            // 2️⃣ Condition: Contains "openstack" → Service = os
+            const text = (issue.title + " " + (issue.body || "")).toLowerCase();
+
+            if (text.includes("openstack")) {
+              await github.graphql(`
+                mutation {
+                  updateProjectV2ItemFieldValue(input: {
+                    projectId: "${item.project_node_id}"
+                    itemId: "${item.node_id}"
+                    fieldId: "${SERVICE_FIELD_ID}"
+                    value: { singleSelectOptionId: "${OS_OPTION_ID}" }
+                  }) {
+                    projectV2Item { id }
+                  }
+                }
+              `);
+              console.log("Service set to os.");
+            }
