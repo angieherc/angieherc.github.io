@@ -47,7 +47,11 @@ jobs:
                           fieldValues(first: 20) {
                             nodes {
                               ... on ProjectV2ItemFieldSingleSelectValue {
-                                field { id }
+                                field {
+                                  ... on ProjectV2SingleSelectField {
+                                    id
+                                  }
+                                }
                                 optionId
                               }
                             }
